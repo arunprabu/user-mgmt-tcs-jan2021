@@ -6,11 +6,17 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <div class='text-center'>
       <hr>
-      <p>Copyright 2021 | Arun</p>
+      <app-menu></app-menu>
+      <p class='greenText'>Copyright 2021 | Arun</p>
     </div>
   `,
   // inline styles
   styles: [
+    `
+      .greenText{
+        color: green;
+      }
+    `
   ]
 })
 export class FooterComponent implements OnInit {
