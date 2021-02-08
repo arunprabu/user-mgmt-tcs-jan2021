@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-user-details',
@@ -9,10 +11,37 @@ import { Component, OnInit } from '@angular/core';
 export class UserDetailsComponent implements OnInit {
 
   isUpdated = false;
+  userData: any;
+  dupUserData: any;
 
-  constructor() { }
+  constructor( private userService: UserService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+
+    // read URL Param in angular 8
+    let userId = this.route.snapshot.paramMap.get('id');
+    this.userService.getUserById(userId)
+      .subscribe( (res: any) => {
+        console.log(res);
+        this.userData = res;
+      });
   }
 
+  onEditModalOpen(){
+    this.dupUserData = { ...this.userData };
+  }
+
+  updateUserHandler(formState) {
+    console.log(formState);
+    console.log(this.dupUserData);
+
+    this.userService.updateUser(this.dupUserData)
+      .subscribe( (res: any) => {
+        console.log(res);
+        if(res && res.id){
+          this.isUpdated = true;
+          this.userData = res;
+        }
+      });
+  }
 }
