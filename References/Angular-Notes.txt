@@ -1,0 +1,77 @@
+Building Blocks
+---
+  Components  (Covered)
+  Directives  (Covered)
+  Services 
+  Interfaces 
+  Classes
+  Models
+  Pipes
+  Guards
+  Modules    
+
+Concepts 
+---
+  Routing (Covered )
+  Forms 
+  RxJS/Observables
+
+1. Building Block-wise Project Structure
+2. Feature-wise Project Structure 
+
+src/
+  app/
+    shared/
+      header/ 
+      footer/ 
+      menu/   
+    home/   
+    concepts/
+      components/
+        ceb/
+        cpb/
+        ...
+        ...
+        ...
+      directives/
+        colorizer/
+    users/  
+      add-users/
+      list-users/
+      user-details/  
+    about/  
+    auth/  
+      login/
+      signup/
+      reset-pw/
+    dashboard/
+    reports/
+
+
+
+
+Forms
+----
+  1. Template Driven Forms 
+      Made with HTML
+      Easiest 
+      small learning curve
+
+      Disadvantages 
+      ---
+        1. Not suitable for complex form validations 
+        2. Not suitable for unit testing 
+
+  2. Reactive Forms (Recommended)
+      Made with HTML + TS 
+      Easy 
+      larger learning curve 
+
+      suitable for complex form validations 
+      suitable for unit testing 
+  
+
+
+
+
+
