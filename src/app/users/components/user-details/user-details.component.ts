@@ -31,17 +31,16 @@ export class UserDetailsComponent implements OnInit {
     this.dupUserData = { ...this.userData };
   }
 
-  updateUserHandler(formState) {
+  async updateUserHandler(formState) {
     console.log(formState);
     console.log(this.dupUserData);
+    
+    var status = await this.userService.updateUser(this.dupUserData);
+    console.log(status);
 
-    this.userService.updateUser(this.dupUserData)
-      .subscribe( (res: any) => {
-        console.log(res);
-        if(res && res.id){
-          this.isUpdated = true;
-          this.userData = res;
-        }
-      });
+    if(status && status.id ){
+      this.isUpdated = true;
+      this.userData = status;
+    }
   }
 }

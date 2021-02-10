@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/operators";
+import { resolve } from 'dns';
 
 // Decorator
 @Injectable({
@@ -8,7 +9,7 @@ import { map } from "rxjs/operators";
 })
 export class UserService {
 
-  private REST_API_URL = 'http://jsonplaceholder.typicode.com/users/';
+  private REST_API_URL = 'http://jsonplaceholder.typicode.com/users';
 
   constructor(private http: HttpClient) { }
 
@@ -36,6 +37,7 @@ export class UserService {
     return this.http.get(this.REST_API_URL)
       .pipe(map((res: any[]) => { // 3. get the resp from rest api 
         console.log(res);
+        // filter, sort, remove, add, convert
         return res; // 4. send the resp to the comp 
       }));
   }
@@ -53,11 +55,21 @@ export class UserService {
   updateUser(updatableUserData){
     console.log(updatableUserData);
     let UPDATE_USER_REST_API = `${this.REST_API_URL}/${updatableUserData.id}`; 
+    
+    // Using Promise
     return this.http.put(UPDATE_USER_REST_API, updatableUserData)
-      .pipe( map( (res: any) => {
+      .toPromise()
+      .then( (res: any) => {
         console.log(res);
         return res;
-      }));
+      })
+      .catch( (err) => {
+        console.log(err);
+        return err;
+      })
+      .finally( () => {
+        console.log('It is over!');
+      });
   }
 
 }
