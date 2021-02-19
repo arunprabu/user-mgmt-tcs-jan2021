@@ -1,0 +1,43 @@
+{
+  "buses": [
+    {
+      "id": 1,
+      "busName": "XYZ Travels",
+      "from": "Hyderabad",
+      "to": "Chennai",
+      "fare": 1000
+    },
+    {
+      "id": 2,
+      "busName": "ABC Travels",
+      "from": "Bangalore",
+      "to": "Chennai",
+      "fare": 900
+    },
+    {
+      "busName": "Parveen Travels",
+      "to": "Pune",
+      "from": "Mumbai",
+      "fare": "1200",
+      "id": 3
+    }
+  ],
+  "tickets":[
+    {
+      "id": 1,
+      "name": "Arun Vj",
+      "seats": ["c10", "a15"]
+    }
+  ],
+  "profile": {
+
+  },
+  "friends": [
+    {
+      
+    }
+  ],
+  "find": [
+    
+  ]
+}

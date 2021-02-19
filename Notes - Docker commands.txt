@@ -1,0 +1,23 @@
+Execute the following commands 
+---
+
+  To create a docker image 
+  -----
+    docker build -t user-mgmt-tcs-jan2021:latest .
+
+  To see docker images 
+  ---
+    docker images 
+
+  To run docker image 
+  ---
+    docker run -p 80:80 user-mgmt-tcs-jan2021
+  
+  To see containers 
+  --
+    docker ps  (will show only active/running containers)
+
+    docker ps -a (to see all containers )
+
+
+
