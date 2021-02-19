@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-// Decorator 
+// Decorator
 // Unifies html, css, ts of the comp
 @Component({
   selector: 'app-root', // exposes the comp in element selector -- mandatory

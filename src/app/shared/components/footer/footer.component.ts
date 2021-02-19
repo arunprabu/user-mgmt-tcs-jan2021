@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-footer', //mandatory
+  selector: 'app-footer', // mandatory
   // inline template
   template: `
     <div class='text-center'>

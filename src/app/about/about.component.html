@@ -1,1 +1,23 @@
-<p>about works!</p>
+<div class="container">
+  <h1>Pipes</h1>
+
+  <p>{{dummyText}}</p>
+  <p>{{dummyText | uppercase }}</p>
+  <p>{{dummyText | lowercase }}</p>
+
+  <p>{{today}}</p>
+  <p>{{today | date }}</p>
+  <!-- parameterised pipe demo -->
+  <p>{{today | date: 'dd/MM/yyyy hh:mm:ss' }}</p>
+  <p>{{today | date: 'MMM dd, yyyy hh:mm:ss a' }}</p>
+  <p>{{today | date: 'short' }}</p>
+  <p>{{today | date: 'medium' | uppercase }}</p>
+
+
+  <h2>Custom Pipe</h2>
+  <p>{{sampleText }}</p>
+  <p>{{sampleText | ellipsis }}</p>
+  <p>{{sampleText | ellipsis: 20 }}</p>
+  <p>{{sampleText | ellipsis: 50 }}</p>
+
+</div>
